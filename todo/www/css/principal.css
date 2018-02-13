@@ -1,0 +1,131 @@
+::-webkit-input-placeholder {
+       text-transform: none;
+}
+.gt-paginacion {
+  padding-top: 10px;
+}
+
+.gt-pag-actual {
+  filter: brightness(85%);
+}
+
+
+textarea {
+	resize: vertical;
+}
+
+.negritas {
+	font-weight: bolder;
+}
+
+.titulo {
+	text-align: center;
+	font-weight: bolder;
+}
+
+.titulo-izq {
+	text-align: left;
+	font-weight: bolder;
+}
+
+.titulo-der {
+	text-align: right;
+	font-weight: bolder;
+}
+
+.margen-normal {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* Bootstrap */
+.well, titulo {
+	color: #EEEEEE;
+}
+
+.modal-header{
+	background-color: #8A8A8A;
+	border-color: #7A7A7A;
+}
+
+.modal-header,titulo{
+	color: #EEEEEE;
+}
+
+.close {	
+	opacity: 1;
+}
+
+.valor-moneda{
+	text-align: right;
+}
+
+.navbar-brand {
+  background: url(../images/task1.png) center no-repeat;
+  width: 75px;
+}
+
+.form-horizontal {
+	padding-top: 10px;
+}
+
+.form-group {
+	padding: 0px 2px 0px 2px;
+}
+
+.row.modal-group {
+	padding: 0px 4% 0px 4%;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.alinearModal{
+    margin: 0px 50px 0px 15px;
+    padding: 0px 50px 0px 15px;
+}
+
+.alignleft {
+    float: left;
+    text-align:left;
+    width:33.33333%;
+}
+.aligncenter {
+    float: left;
+    text-align:center;
+    width:33.33333%;
+}
+.alignright {
+    float: left;
+    text-align:right;
+    width:33.33333%;
+}
+.gt-wdt100{
+	width: 100px;
+}
+.gt-wdt300{
+	width: 300px;
+}
+.gt-wdt50{
+	width: 100px;
+}
+.gt-wdt25{
+	width: 25px;
+}
+.informativo{
+	background-color: #b1c0cc;
+	height: 380px;
+}
+
+.panel1{
+	height: 380px;
+	width: 380px;
+}
+
+.enfoque{
+	background-color: #745234;
+	background-image: url('../img/fondo.jpg');
+	background-repeat: no-repeat;
+	color:white;
+}

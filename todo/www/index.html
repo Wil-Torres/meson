@@ -1,0 +1,72 @@
+<html ng-app="todo">
+
+<head>
+  <meta charset="utf-8">
+  <title>Todo</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/principal.css">
+
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+  <!-- Needed for Cordova/PhoneGap (will be a 404 during development) -->
+  <script src="cordova.js"></script>
+</head>
+
+<body ng-controller="ctrlSeguridad">
+    <div class="row text-center">
+        <div class="col">.col</div>
+        <div class="col">.col</div>
+        <div class="col">.col</div>
+        <div class="col">.col</div>
+        <div class="col">.col</div>
+      </div>
+
+  <div class="content">
+    <div class="list">
+      <label class="item">User Name</label>
+      <input type="text" placeholder="First Name" class="form-control" ng-model="objeto.aut_usuario" placeholder="User Name">
+      <label class="item">Password</label>
+      <input type="text" class="form-control" ng-model="objeto.aut_password" placeholder="Password User">
+      <button class="button button-block button-positive" ng-click="agregarUsuario()">
+        Login
+      </button>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <label for="Valor1">Username</label>
+          <input type="text" class="form-control" ng-model="valor" placeholder="Email">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <label for="total">Total</label>
+          <input type="text" class="form-control" ng-model="total" placeholder="Total">
+          <button class="button button-small" ng-click="mostrar()"> Sing-up
+            <i class="fa fa-plus"></i>
+          </button>
+        </div>
+      </div>
+      <table class="table table-striped">
+        <tr ng-repeat="obj in objUser">
+          <td>{{obj.aut_id}}</td>
+          <td>{{obj.aut_usuario}}</td>
+          <td>{{obj.aut_password}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="pages/security/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<body>
+
+    <div ng-app="myApp" ng-controller="customersCtrl">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-2 col-xs-3">
+                        <label for="cuentaBanco">Nombre del Banco</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary pull-right">
+                                    <i class="fa fa-search-plus">A</i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-3">
+                        <label for="cuentaBancoDesc">Cuenta</label>
+                        <select id="agrupador" class="form-control">
+                            <option ng-value="null">0 - SIN ASIGNAR</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 col-xs-3">
+                        <label for="fechaSolicitud">Fecha</label>
+                        <input class="form-control text-center" type="date">
+                    </div>
+                    <div ng-if="esCheque" class="col-md-2 col-xs-3">
+                        <label for="fechaSolicitud">Fecha Emision</label>
+                        <input class="form-control text-center" type="date">
+                    </div>
+                    <div ng-if="esNota" class="col-md-2 col-xs-3">
+                        <label for="fechaSolicitud">Fecha Corte</label>
+                        <input class="form-control text-center" type="date">
+                    </div>
+                    <div class="col-md-2 col-xs-3">
+                        <label for="moneda">Moneda</label>
+                        <select class="form-control text-center" disabled>
+                        </select>
+                    </div>
+                    <div class="col-md-2 col-xs-3">
+                        <label for="tasaCambio">Tasa Cambio Local</label>
+                        <input class="form-control text-right" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-xs-10">
+                        <label for="moneda">Tipo de Documento</label>
+                        <select class="form-control text-center" disabled>
+                        </select>
+                    </div>
+                    <div ng-if="esCheque" class="col-md-1 col-xs-6">
+                        <label for="numeroSolicitud">Chequera</label>
+                        <input class="form-control text-center" type="text">
+                    </div>
+                    <div class="col-md-2 col-xs-10">
+                        <label for="nombreCheque">Documento</label>
+                        <input class="form-control" type="text">
+                    </div>
+                    <div ng-if="esCheque" class="col-md-2 col-xs-6">
+                        <label for="numeroSolicitud">Número Solicitud</label>
+                        <input class="form-control text-center" type="text">
+                    </div>
+                    <div class="col-md-2 col-xs-2">
+                        <label for="nombreCheque">Valor </label>
+                        <input class="form-control text-right" type="number" step="0.01">
+                    </div>
+                    <div ng-if="esCheque" class="col-md-5 col-xs-6">
+                        <label for="numeroSolicitud">Paguese A</label>
+                        <input class="form-control text-center" type="text">
+                    </div>
+                    <div ng-if="esNota" class="col-md-1 col-xs-6">
+                        <label for="numeroSolicitud">Sucursal</label>
+                        <input class="form-control text-center" type="text">
+                    </div>
+                    <div class="col-md-2 col-xs-6 text-center">
+                        <label for="numeroSolicitud">Flujo Caja</label>
+                        <input class="form-control text-center" type="checkbox">
+                    </div>
+                    <div ng-if="esCheque" class="col-md-3 col-xs-10">
+                        <label for="moneda">Tipo de Operacion</label>
+                        <select class="form-control text-center" disabled>
+                        </select>
+                    </div>
+                    <div ng-if="esCheque" class="col-md-2 col-xs-6">
+                        <label for="numeroSolicitud">No Negociable</label>
+                        <input class="form-control text-center" type="checkbox">
+                    </div>
+                </div>
+                <div class="row gt-margen-top">
+                    <div class="col-md-12 col-xs-12">
+                        <label for="concepto">Por concepto de:</label>
+                        <textarea class="form-control" ng-model="objSolicitud.concepto" id="concepto" ng-disabled="opt.lock"></textarea>
+                    </div>
+                </div>
+                <div class="row gt-margen-top">
+
+
+                </div>
+                <div>
+                    <div class="col-md-3 col-xs-3 pull-right">
+                        <button class="form-control btn btn-primary" ng-click="generar()">Generar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('customersCtrl', function ($scope, $http) {
+            $scope.objSolicitud = {
+            };
+            $scope.esNota = true;
+            $scope.esCheque = false;
+            $scope.generar = function () {
+            	$scope.esNota = !$scope.esNota;
+            	$scope.esCheque = !$scope.esCheque;
+                
+            }
+        });
+    </script>
+
+</body>
+
+</html>
